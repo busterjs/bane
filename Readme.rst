@@ -33,8 +33,8 @@ Developers - Running tests
 Emitter creation API
 ====================
 
-``var emitter = bane.createEmitter([object]);``
------------------------------------------------
+``var emitter = bane.createEventEmitter([object]);``
+----------------------------------------------------
 
 Create a new event emitter. If an object is passed, it will be modified by
 adding the event emitter methods (see below).
