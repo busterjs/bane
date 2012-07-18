@@ -104,3 +104,8 @@ events listed in the provided ``events`` array.
 Emit the ``event`` (which is a string) with optional data. Will cause all
 registered listeners for the named event to be called. If additional arguments
 are provided, the listeners will be called with them.
+
+License
+=======
+
+Two-clause BSD-license, see `LICENSE <https://raw.github.com/busterjs/bane/master/LICENSE>`_
