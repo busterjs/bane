@@ -92,7 +92,10 @@ buster.testCase("bane", {
 
         "emits all even when some fail": function () {
             var emitter = bane.createEventEmitter();
-            var listeners = [this.stub().throws("I'm thrown on purpose"), this.spy()];
+            var listeners = [
+                this.stub().throws("I'm thrown on purpose"),
+                this.spy()
+            ];
 
             emitter.on("event", listeners[0]);
             emitter.on("event", listeners[1]);
@@ -166,7 +169,7 @@ buster.testCase("bane", {
             assert.calledOn(listener.doIt, listener);
         },
 
-        "binds all methods as event listeners to corresponding events": function () {
+        "binds all methods as listeners to corresponding events": function () {
             var emitter = bane.createEventEmitter();
             var listener = {
                 complete: this.spy(),
