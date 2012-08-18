@@ -147,6 +147,20 @@ buster.testCase("bane", {
 
             assert.called(listeners[1]);
             refute.called(listeners[0]);
+        },
+
+        // AKA "creates extensible emitters"
+        "does not emit events to other emitter's listeners": function () {
+            function Thing() {}
+            Thing.prototype = bane.createEventEmitter();
+            var emitter1 = new Thing();
+            var emitter2 = new Thing();
+            var listener = this.spy();
+            emitter1.on("ouch", listener);
+
+            emitter2.emit("ouch");
+
+            refute.called(listener);
         }
     },
 
