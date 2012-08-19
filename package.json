@@ -3,12 +3,12 @@
     "version": "0.1.0",
     "description": "(Yet another) Event emitter for Node, Browser globals and AMD",
     "homepage": "http://busterjs.org/docs/bane/",
-    "author": {
+    "author": "August Lilleaas and Christian Johansen",
+    "contributors": [{
         "name": "Christian Johansen",
         "email": "christian@cjohansen.no",
         "url": "http://cjohansen.no"
-    },
-    "contributors": [{
+    }, {
         "name": "August Lilleaas",
         "email": "august.lilleaas@gmail.com",
         "url": "http://augustl.com"
