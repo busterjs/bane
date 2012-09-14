@@ -19,7 +19,7 @@
         "url": "https://github.com/busterjs/bane.git"
     },
     "scripts": {
-        "test": "./node_modules/buster/bin/buster-test --node"
+        "test": "node ./test/bane-test.js"
     },
     "devDependencies": {
         "buster": "0.6.2"
