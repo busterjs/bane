@@ -201,7 +201,7 @@ buster.testCase("bane", {
             assert.calledOnce(listener.success);
         },
 
-        "does not bind inherited methods": function () {
+        "binds inherited methods": function () {
             var emitter = bane.createEventEmitter();
             function F() {}
             F.prototype = { something: this.spy() };
@@ -211,7 +211,7 @@ buster.testCase("bane", {
             emitter.bind(listener);
             emitter.emit("something");
 
-            refute.called(F.prototype.something);
+            assert.calledOnce(F.prototype.something);
         },
 
         "binds array of methods/events": function () {
