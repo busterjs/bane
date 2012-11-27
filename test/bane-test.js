@@ -255,6 +255,18 @@ buster.testCase("bane", {
             refute.called(listener);
         },
 
+        "removes supervisor listener": function () {
+            var supervisor = this.spy();
+            var emitter = bane.createEventEmitter();
+
+            emitter.on(supervisor);
+            emitter.off(supervisor);
+            emitter.emit("something", 42);
+            emitter.emit("stuff", { id: 13 });
+
+            refute.called(supervisor);
+        },
+
         "should not remove listener for other event": function () {
             var listener = this.spy();
             var emitter = bane.createEventEmitter();

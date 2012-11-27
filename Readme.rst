@@ -61,6 +61,12 @@ Remove a previously registered ``listener`` function for the specified ``event``
 (which is a string). If the function has not previously been registered, it is
 silently ignored.
 
+``off(listener)``
+-----------------
+
+Remove a previously registered "supervisor" ``listener`` function. If the
+function has not previously been registered, it is silently ignored.
+
 ``once(event, listener)``
 -------------------------
 
