@@ -290,8 +290,23 @@ buster.testCase("bane", {
             emitter.emit("event");
 
             assert.calledOnce(listeners[0]);
-            refute.calledOnce(listeners[1]);
+            refute.called(listeners[1]);
             assert.calledOnce(listeners[2]);
+        },
+
+        "without listener should remove all listeners": function () {
+            var listeners = [this.spy(), this.spy(), this.spy()];
+            var emitter = bane.createEventEmitter();
+
+            emitter.on("event", listeners[0]);
+            emitter.on("event", listeners[1]);
+            emitter.on("event", listeners[2]);
+            emitter.off("event");
+            emitter.emit("event");
+
+            refute.called(listeners[0]);
+            refute.called(listeners[1]);
+            refute.called(listeners[2]);
         },
 
         "should remove listener in other listener for same event": function () {
