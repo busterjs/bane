@@ -12,6 +12,10 @@
         "name": "August Lilleaas",
         "email": "august.lilleaas@gmail.com",
         "url": "http://augustl.com"
+    }, {
+        "name": "Stein Magnus Jodal",
+        "email": "stein.magnus@jodal.no",
+        "url": "http://jodal.no"
     }],
     "main": "./lib/bane",
     "repository": {
