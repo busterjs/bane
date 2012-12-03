@@ -78,8 +78,8 @@ it is silently ignored.
 ---------
 
 Remove all previously registered listeners on the object, both regular
-listeners and supervisors. If no functions have previously been registrered, it
-is silently ignored.
+listeners, supervisor listeners, and errbacks. If no functions have previously
+been registrered, it is silently ignored.
 
 ``once(event, listener)``
 -------------------------

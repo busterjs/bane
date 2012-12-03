@@ -337,6 +337,18 @@ buster.testCase("bane", {
             refute.called(listeners[1]);
         },
 
+        "without any args removes all errbacks": function() {
+            var emitter = bane.createEventEmitter();
+            var errback = this.spy();
+            emitter.errback(errback);
+
+            emitter.on("event", this.stub().throws());
+            emitter.off();
+            emitter.emit("event");
+
+            refute.called(errback);
+        },
+
         "should remove listener in other listener for same event": function () {
             var emitter = bane.createEventEmitter();
             var listener = this.spy();
