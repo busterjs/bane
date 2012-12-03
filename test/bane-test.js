@@ -309,6 +309,34 @@ buster.testCase("bane", {
             refute.called(listeners[2]);
         },
 
+        "without any args removes all supervisors": function () {
+            var supervisors = [this.spy(), this.spy()];
+            var emitter = bane.createEventEmitter();
+
+            emitter.on(supervisors[0]);
+            emitter.on(supervisors[1]);
+            emitter.off();
+            emitter.emit("event1");
+            emitter.emit("event2");
+
+            refute.called(supervisors[0]);
+            refute.called(supervisors[1]);
+        },
+
+        "without any args removes all listeners": function () {
+            var listeners = [this.spy(), this.spy()];
+            var emitter = bane.createEventEmitter();
+
+            emitter.on("event1", listeners[0]);
+            emitter.on("event2", listeners[1]);
+            emitter.off();
+            emitter.emit("event1");
+            emitter.emit("event2");
+
+            refute.called(listeners[0]);
+            refute.called(listeners[1]);
+        },
+
         "should remove listener in other listener for same event": function () {
             var emitter = bane.createEventEmitter();
             var listener = this.spy();
