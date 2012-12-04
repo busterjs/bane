@@ -128,6 +128,22 @@ buster.testCase("bane", {
             assert.callOrder(listeners[0], listeners[1]);
         },
 
+        "calls supervisors before other listeners": function () {
+            var emitter = bane.createEventEmitter();
+            var supervisors = [this.spy(), this.spy()];
+            var listeners = [this.spy(), this.spy()];
+
+            emitter.on("event", listeners[0]);
+            emitter.on("event", listeners[1]);
+            emitter.on(supervisors[0]);
+            emitter.on(supervisors[1]);
+
+            emitter.emit("event");
+
+            assert.callOrder(
+                supervisors[0], supervisors[1], listeners[0], listeners[1]);
+        },
+
         "does not fail if no listeners": function () {
             var emitter = bane.createEventEmitter();
 
