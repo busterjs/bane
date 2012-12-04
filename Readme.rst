@@ -118,6 +118,13 @@ Binds methods on ``object`` to corresponding events (see ``bind(object)``
 above), but instead of binding all methods on the object, only binds the
 events listed in the provided ``events`` array.
 
+``errback(listener)``
+---------------------
+
+Register the ``listener`` function as an "errback". It will be called with the
+arguments ``event`` and ``error`` for any error thrown when listeners are
+notified.
+
 ``emit(event[, data1[, data2[, ...]]])``
 ----------------------------------------
 
