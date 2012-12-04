@@ -74,6 +74,13 @@ Remove all previously registered ``listener`` functions for the specified
 ``event`` (which is a string). If no functions have previously been registered,
 it is silently ignored.
 
+``off()``
+---------
+
+Remove all previously registered listeners on the object, both regular
+listeners, supervisor listeners, and errbacks. If no functions have previously
+been registrered, it is silently ignored.
+
 ``once(event, listener)``
 -------------------------
 
