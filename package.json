@@ -26,6 +26,6 @@
         "test": "node ./test/bane-test.js"
     },
     "devDependencies": {
-        "buster": "0.6.2"
+        "buster": "0.6.11"
     }
 }
