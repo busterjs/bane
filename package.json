@@ -1,6 +1,6 @@
 {
     "name": "bane",
-    "version": "0.2.0",
+    "version": "1.0.0",
     "description": "(Yet another) Event emitter for Node, Browser globals and AMD",
     "homepage": "http://busterjs.org/docs/bane/",
     "author": "August Lilleaas and Christian Johansen",
