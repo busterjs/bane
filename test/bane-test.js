@@ -3,6 +3,9 @@ if (typeof module === "object" && typeof require === "function") {
     var bane = require("../lib/bane");
 }
 
+var assert = buster.assert;
+var refute = buster.refute;
+
 buster.testCase("bane", {
     ".create": {
         "returns event emitter": function () {
@@ -411,6 +414,33 @@ buster.testCase("bane", {
             emitter.emit("event");
 
             assert.equals("bar", obj.foo);
+        }
+    },
+
+    ".aggregate": {
+        "proxies events": function () {
+            var emitter = bane.createEventEmitter();
+            var listener = this.spy();
+
+            var aggregated = bane.aggregate([emitter]);
+            aggregated.on("something", listener);
+            emitter.emit("something");
+
+            assert.calledOnce(listener);
+        },
+
+        "proxies multiple event emitters": function () {
+            var emitter1 = bane.createEventEmitter();
+            var emitter2 = bane.createEventEmitter();
+            var listener = this.spy();
+
+            var aggregated = bane.aggregate([emitter1, emitter2]);
+            aggregated.on("some-other-thing", listener);
+
+            emitter1.emit("some-other-thing");
+            emitter2.emit("some-other-thing");
+
+            assert.calledTwice(listener);
         }
     }
 });
