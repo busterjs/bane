@@ -23,9 +23,10 @@
         "url": "https://github.com/busterjs/bane.git"
     },
     "scripts": {
-        "test": "node ./test/bane-test.js"
+        "test": "node node_modules/buster/bin/buster-test",
+        "test-debug": "node --debug-brk node_modules/buster/bin/buster-test"
     },
     "devDependencies": {
-        "buster": "0.6.11"
+        "buster": "*"
     }
 }
