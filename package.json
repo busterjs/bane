@@ -17,6 +17,7 @@
         "email": "stein.magnus@jodal.no",
         "url": "http://jodal.no"
     }],
+    "license": "BSD-2-Clause",
     "main": "./lib/bane",
     "repository": {
         "type": "git",
