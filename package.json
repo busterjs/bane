@@ -23,9 +23,6 @@
   ],
   "license": "BSD-2-Clause",
   "main": "./lib/bane",
-  "engines": {
-    "node": ">= 4"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/busterjs/bane.git"
