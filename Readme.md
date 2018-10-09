@@ -52,24 +52,24 @@ silently ignored.
 Remove a previously registered "supervisor" `listener` function. If the
 function has not previously been registered, it is silently ignored.
 
-###`off(event)`
+### `off(event)`
 
 Remove all previously registered `listener` functions for the specified
 `event` (which is a string). If no functions have previously been registered,
 it is silently ignored.
 
-###`off()`
+### `off()`
 
 Remove all previously registered listeners on the object, both regular
 listeners, supervisor listeners, and errbacks. If no functions have previously
 been registrered, it is silently ignored.
 
-###`once(event, listener)`
+### `once(event, listener)`
 
 Register a `listener` function for the given `event` (which is a string)
 only once. After the first event has been emitted, the listener is removed.
 
-###`bind(object)`
+### `bind(object)`
 
 Register all methods on `object` as listeners for the event named as the
 method name. Convenient way to bind many event listeners in one go:
@@ -98,7 +98,7 @@ Binds methods on `object` to corresponding events (see `bind(object)`
 above), but instead of binding all methods on the object, only binds the
 events listed in the provided `events` array.
 
-###`errback(listener)`
+### `errback(listener)`
 
 Register the `listener` function as an "errback". It will be called with the
 arguments `event` and `error` for any error thrown when listeners are
